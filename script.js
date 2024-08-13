@@ -1,4 +1,17 @@
 /* SCRIPT FOR CALCULATOR */
+let displayValue = '';
+
+const display = document.querySelector('.display');
+
+const numberBtn = document.querySelectorAll('.number');
+
+numberBtn.forEach(button => {
+    button.addEventListener('click', function() {
+        displayValue += button.textContent;
+        display.textContent = displayValue;
+    })
+});
+
 let num1 = 0;
 let operator;
 let num2 = 0;
