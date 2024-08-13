@@ -1,3 +1,4 @@
+/* SCRIPT FOR CALCULATOR */
 let num1 = 0;
 let operator;
 let num2 = 0;

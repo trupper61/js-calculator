@@ -1,0 +1,65 @@
+/* CSS STYLE FOR CALCULATOR */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin : 0;
+    background-color: #F0F0F0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.display {
+ background-color: #222;
+ color: white;
+ font-size: 2rem;
+ padding: 20px;
+ text-align: right;
+ border-bottom: 2px solid #ccc;
+ min-height: 80px;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 20px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    flex: 1 1 25%;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+button:nth-child(4n) {
+    border-right: none; /* Removes right border for last column */
+}
+
+button:nth-child(-n+4) {
+    border-bottom: none; /* Removes bottom border for last row */
+}
+
+button.clear {
+    flex: 1 1 100%;
+    background-color: #FF6666;
+    color: white;
+}
