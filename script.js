@@ -1,4 +1,7 @@
 /* SCRIPT FOR CALCULATOR */
+let firstValue = '';
+let secondValue = '';
+let currentOperator = '';
 let displayValue = '';
 
 const display = document.querySelector('.display');
@@ -12,9 +15,22 @@ numberBtn.forEach(button => {
     })
 });
 
-let num1 = 0;
-let operator;
-let num2 = 0;
+const operatorBtn = document.querySelectorAll('.operator');
+operatorBtn.forEach(button => {
+    button.addEventListener('click', function() {
+        if (firstValue === '') {
+            firstValue = displayValue;
+            currentOperator = button.textContent;
+            displayValue = '';
+        } else if (displayValue !== '') {
+            secondValue = displayValue;
+            display.textContent = operate(firstValue, currentOperator, secondValue);
+            firstValue = display.textContent;
+            display = '';
+            currentOperator = button.textContent;
+        }
+    })
+})
 
 function addition(a, b){
     return a + b;
