@@ -43,6 +43,15 @@ equalsBtn.addEventListener('click', function() {
     }
 })
 
+const clearBtn = document.querySelector('.clear');
+clearBtn.addEventListener('click', function () {
+    firstValue = '';
+    currentOperator = '';
+    secondValue = '';
+    displayValue = '';
+    display.textContent = 0;
+})
+
 function addition(a, b){
     return a + b;
 }
@@ -59,7 +68,11 @@ function division(a, b){
         return a / b;
     }
 }
+
 function operate(numa, operator, numb){
+    a = parseFloat(a);
+    b = parseFloat(b);
+    
     switch(operator){
         case "+":
             return numa + numb;
