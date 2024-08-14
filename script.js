@@ -26,7 +26,7 @@ operatorBtn.forEach(button => {
             secondValue = displayValue;
             display.textContent = operate(firstValue, currentOperator, secondValue);
             firstValue = display.textContent;
-            display = '';
+            displayValue = '';
             currentOperator = button.textContent;
         }
     })
@@ -52,42 +52,28 @@ clearBtn.addEventListener('click', function () {
     display.textContent = 0;
 })
 
-function addition(a, b){
-    return a + b;
-}
-function substraction(a, b){
-    return a - b;
-}
-function multiplication(a, b){
-    return a * b;
-}
-function division(a, b){
-    if (b === 0){
-        return "ERROR";
-    } else{
-        return a / b;
+const decimalBtn = document.querySelector('.decimal');
+decimalBtn.addEventListener('click', function() {
+    if (!displayValue.includes('.')){
+        displayValue += '.';
+        display.textContent = displayValue;
     }
-}
+})
 
 function operate(numa, operator, numb){
-    a = parseFloat(a);
-    b = parseFloat(b);
+    numa = parseFloat(numa);
+    numb = parseFloat(numb);
     
     switch(operator){
         case "+":
             return numa + numb;
-            break;
         case "-":
             return numa - numb;
-            break;
         case "*":
             return numa * numb;
-            break;
         case "/":
-            return b === 0 ? 'ERROR' : a / b;
-            break;
+            return numb === 0 ? 'ERROR' : numa / numb;
         default:
             return null;
-            break;
     }
 }
