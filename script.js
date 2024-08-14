@@ -32,6 +32,17 @@ operatorBtn.forEach(button => {
     })
 })
 
+const equalsBtn = document.querySelector('.equals');
+equalsBtn.addEventListener('click', function() {
+    if (firstValue !== '' && displayValue !== '' && currentOperator !== ''){
+        secondValue = displayValue;
+        display.textContent = operate(firstValue, currentOperator, secondValue);
+        firstValue = display.textContent;
+        displayValue = '';
+        currentOperator = '';
+    }
+})
+
 function addition(a, b){
     return a + b;
 }
@@ -51,18 +62,19 @@ function division(a, b){
 function operate(numa, operator, numb){
     switch(operator){
         case "+":
-            addition(numa, numb);
+            return numa + numb;
             break;
         case "-":
-            substraction(numa, numb);
+            return numa - numb;
             break;
         case "*":
-            multiplication(numa, numb);
+            return numa * numb;
             break;
         case "/":
-            division(numa, numb);
+            return b === 0 ? 'ERROR' : a / b;
+            break;
         default:
-            console.log("ERROR! wrong operator");
+            return null;
             break;
     }
 }
