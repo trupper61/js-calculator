@@ -63,17 +63,26 @@ decimalBtn.addEventListener('click', function() {
 function operate(numa, operator, numb){
     numa = parseFloat(numa);
     numb = parseFloat(numb);
-    
+   
+    let result;
     switch(operator){
         case "+":
-            return numa + numb;
+            result = numa + numb;
+            break;
         case "-":
-            return numa - numb;
+            result = numa - numb;
+            break;
         case "*":
-            return numa * numb;
+            result = numa * numb;
+            break;
         case "/":
-            return numb === 0 ? 'ERROR' : numa / numb;
+            result = numb === 0 ? 'ERROR' : numa / numb;
+            break;
         default:
             return null;
     }
+    if (result !== 'ERROR'){
+        result = parseFloat(result.toFixed(5));
+    }
+    return result;
 }
