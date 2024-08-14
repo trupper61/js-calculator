@@ -59,7 +59,27 @@ button:nth-child(-n+4) {
 }
 
 button.clear {
-    flex: 1 1 100%;
+    flex: 1 1 50%;
     background-color: #FF6666;
     color: white;
+}
+
+button.clear:hover {
+    background-color: #E65C5C;
+}
+
+button.backspace {
+    flex: 1 1 50%;
+    background-color: #66B2FF;
+    color: white;
+    border-right: none;
+    font-size: 1.8rem;
+}
+
+button.backspace:hover {
+    background-color: #5CA3E6;
+}
+
+button:hover {
+    background-color: #F1F1F1;
 }
