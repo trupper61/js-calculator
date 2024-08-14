@@ -116,8 +116,9 @@ window.addEventListener('keydown', (e) => {
 })
 
 function appendNumber(num) {
-    if (currentOperator && !secondValue){
+    if (currentOperator && firstValue !== '' && !secondValue){
         displayValue = '';
+        secondValue = true;
     }
     displayValue += num;
     display.textContent = displayValue;
