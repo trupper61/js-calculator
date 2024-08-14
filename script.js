@@ -60,6 +60,12 @@ decimalBtn.addEventListener('click', function() {
     }
 })
 
+const backspaceBtn = document.querySelector('.backspace');
+backspaceBtn.addEventListener('click', function() {
+    displayValue = displayValue.slice(0, -1);
+    display.textContent = displayValue || '0';
+})
+
 function operate(numa, operator, numb){
     numa = parseFloat(numa);
     numb = parseFloat(numb);
